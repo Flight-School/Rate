@@ -1,5 +1,7 @@
 # Rate
 
+![Build Status](https://api.travis-ci.com/Flight-School/Rate.svg?branch=master)
+
 A ratio of two related quantities,
 expressed in terms of an amount of numerator unit per single denominator unit.
 
