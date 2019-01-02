@@ -7,22 +7,22 @@ import Foundation
 public struct Rate<Numerator, Denominator> where Numerator: Unit, Denominator: Unit {
     /// The value of the numerator unit per single denominator unit.
     public var value: Double
-    
+
     /// The numerator unit.
     public var numeratorUnit: Numerator
-    
+
     /// The denominator unit.
     public var denominatorUnit: Denominator
-    
+
     /// The rate symbol.
     public var symbol: String {
         return "\(self.numeratorUnit.symbol)/\(self.denominatorUnit.symbol)"
     }
-    
+
     /**
      Creates a new rate from a value,
      and specified numerator and denominator units.
-     
+
      - Parameters:
         - value: The value of the numerator unit per single denominator unit.
         - unit: The numerator unit.
@@ -33,10 +33,10 @@ public struct Rate<Numerator, Denominator> where Numerator: Unit, Denominator: U
         self.numeratorUnit = numeratorUnit
         self.denominatorUnit = denominatorUnit
     }
-    
+
     /**
      Creates a new rate from specified numerator and denominator measurements.
- 
+
      - Parameters:
         - numerator: The numerator measurement.
         - denominator: The denominator measurement.
@@ -50,17 +50,17 @@ public struct Rate<Numerator, Denominator> where Numerator: Unit, Denominator: U
 
     /**
      Returns the product of the rate multiplied by the specified value.
-     
+
      - Parameters:
         - by: The value to multiply the rate by.
      */
     public func multiplied(by scalar: Double) -> Rate<Numerator, Denominator> {
         return .init(value: self.value * scalar, unit: self.numeratorUnit, per: self.denominatorUnit)
     }
-    
+
     /**
      Returns the quotient of the rate divided by the specified value.
-     
+
      - Parameters:
         - by: The value to divide the rate by.
      */
@@ -72,14 +72,14 @@ public struct Rate<Numerator, Denominator> where Numerator: Unit, Denominator: U
 extension Rate where Numerator: Dimension, Denominator: Dimension {
     /**
      Returns the sum of this rate and the specified rate.
-     
+
      - Parameters:
         - rate: The rate to add to this rate.
      */
     public func adding(_ rate: Rate<Numerator, Denominator>) -> Rate<Numerator, Denominator> {
         return .init(value: self.value + self.numeratorUnit.converter.value(fromBaseUnitValue: rate.numeratorUnit.converter.baseUnitValue(fromValue: rate.value)), unit: self.numeratorUnit, per: self.denominatorUnit)
     }
-    
+
     /**
      Returns the difference between this rate and the specified rate.
 
@@ -89,10 +89,10 @@ extension Rate where Numerator: Dimension, Denominator: Dimension {
     public func subtracting(_ rate: Rate<Numerator, Denominator>) -> Rate<Numerator, Denominator> {
         return .init(value: self.value - self.numeratorUnit.converter.value(fromBaseUnitValue: rate.numeratorUnit.converter.baseUnitValue(fromValue: rate.value)), unit: self.numeratorUnit, per: self.denominatorUnit)
     }
-    
+
     /**
      Returns the product of this rate multiplied by the specified measurement.
-     
+
      - Parameters:
         - by: The measurement to multiply this rate by.
      */
