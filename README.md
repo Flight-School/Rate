@@ -10,7 +10,7 @@ This functionality is discussed in Chapter 5 of
 
 ## Requirements
 
--   Swift 4.0+
+- Swift 4.0+
 
 ## Installation
 
@@ -63,8 +63,8 @@ For example, volume over time multiplied by time yields volume:
 
 ```swift
 let flowRate = Rate<UnitVolume, UnitDuration>(value: 84760,
-                                                     unit: .cubicFeet,
-                                                     per: .seconds)
+                                               unit: .cubicFeet,
+                                                per: .seconds)
 let oneDay = Measurement<UnitDuration>(value: 24, unit: .hours)
 
 (flowRate * oneDay).converted(to: .megaliters) // 207371ML
