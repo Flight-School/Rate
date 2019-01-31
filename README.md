@@ -1,12 +1,12 @@
 # Rate
 
-![Build Status](https://api.travis-ci.com/Flight-School/Rate.svg?branch=master)
+[![Build Status][build status badge]][build status]
 
 A ratio of two related quantities,
 expressed in terms of an amount of numerator unit per single denominator unit.
 
 This functionality is discussed in Chapter 5 of
-[Flight School Guide to Swift Numbers](https://gumroad.com/l/swift-numbers).
+[Flight School Guide to Swift Numbers](https://flight.school/books/numbers).
 
 ## Requirements
 
@@ -77,3 +77,6 @@ MIT
 ## Contact
 
 Mattt ([@mattt](https://twitter.com/mattt))
+
+[build status]: https://travis-ci.org/Flight-School/Rate
+[build status badge]: https://api.travis-ci.com/Flight-School/Rate.svg?branch=master
