@@ -4,6 +4,7 @@ import Foundation
  A ratio of two related quantities,
  expressed in terms of an amount of numerator unit per single denominator unit.
  */
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 public struct Rate<Numerator, Denominator> where Numerator: Unit, Denominator: Unit {
     /// The value of the numerator unit per single denominator unit.
     public var value: Double
@@ -69,6 +70,7 @@ public struct Rate<Numerator, Denominator> where Numerator: Unit, Denominator: U
     }
 }
 
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 extension Rate where Numerator: Dimension, Denominator: Dimension {
     /**
      Returns the sum of this rate and the specified rate.
@@ -101,32 +103,39 @@ extension Rate where Numerator: Dimension, Denominator: Dimension {
     }
 }
 
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 extension Rate: CustomStringConvertible {
     public var description: String {
         return "\(self.value) \(self.symbol)"
     }
 }
 
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 public func + <T, U>(lhs: Rate<T,U>, rhs: Rate<T,U>) -> Rate<T,U> where T: Dimension, U: Dimension {
     return lhs.adding(rhs)
 }
 
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 public func - <T, U>(lhs: Rate<T,U>, rhs: Rate<T,U>) -> Rate<T,U> where T: Dimension, U: Dimension {
     return lhs.subtracting(rhs)
 }
 
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 public func * <T, U>(lhs: Rate<T,U>, rhs: Double) -> Rate<T,U> where T: Dimension, U: Dimension {
     return lhs.multiplied(by: rhs)
 }
 
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 public func / <T, U>(lhs: Rate<T,U>, rhs: Double) -> Rate<T,U> where T: Dimension, U: Dimension {
     return lhs.divided(by: rhs)
 }
 
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 public func * <T, U>(lhs: Rate<T,U>, rhs: Measurement<U>) -> Measurement<T> where T: Dimension, U: Dimension {
     return lhs.multiplied(by: rhs)
 }
 
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 public func * <T, U>(lhs: Measurement<U>, rhs: Rate<T,U>) -> Measurement<T> where T: Dimension, U: Dimension {
     return rhs.multiplied(by: lhs)
 }

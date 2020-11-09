@@ -1,6 +1,7 @@
 import XCTest
 @testable import Rate
 
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 final class RateTests: XCTestCase {
     func testInitialization() {
         let rate = Rate<UnitMass, UnitLength>(value: 1, unit: .kilograms, per: .meters)
