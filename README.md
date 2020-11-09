@@ -78,5 +78,5 @@ MIT
 
 Mattt ([@mattt](https://twitter.com/mattt))
 
-[build status]: https://travis-ci.org/Flight-School/Rate
-[build status badge]: https://api.travis-ci.com/Flight-School/Rate.svg?branch=master
+[build status]: https://github.com/Flight-School/Rate/actions?query=workflow%3ACI
+[build status badge]: https://github.com/Flight-School/Rate/workflows/CI/badge.svg
