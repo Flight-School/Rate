@@ -1,4 +1,0 @@
-language: objective-c
-xcode_project: Rate.xcodeproj
-xcode_scheme: Rate
-xcode_destination: platform=macOs
